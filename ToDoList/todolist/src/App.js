@@ -1,10 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Todos from "./ToDos";
+import Todo from "./ToDo";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi</h1>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Todos />} />
+          <Route path="/todo/:id" element={<Todo />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
